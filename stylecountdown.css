@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+*
+{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
+.container
+{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: #000000;
+	background-size: cover;
+	display: flex;
+
+}
+.container .imgBx
+{
+	position: relative;
+	width: 450px;
+	height: 100%;
+	background: url(moon.png);
+	background-size: cover;
+	animation: animate 40s linear infinite;
+}
+@keyframes animate
+{
+	0%,100%
+	{
+		background-position: left;
+	}
+	50%
+	{
+		background-position: right;
+	}
+}
+.container .countdownBx
+{
+	display: flex;
+	width: calc(100% - 450px);
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.container h2
+{
+	text-align: center;
+	font-size: 1.5em;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-weight: 500;
+    line-height: 4em;
+}
+.container h2 span
+{
+	font-size: 6em;
+	font-weight: 700;
+}
+.container h2 span i
+{
+	font-style: initial;
+	color: #06d6f1;
+}
+.countdown
+{
+	margin: 30px;
+	background: rgba(0,0,0,0.1);
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.countdown div
+{
+	position: relative;
+	width: 100px;
+	text-align: center;
+	color: #fff;
+	margin: 0 15px;
+	margin-top: -25px;
+	font-size: 2.5em;
+	font-weight: 500;
+}
+.countdown div:before
+{
+	content: '';
+	position: absolute;
+	bottom: -30px;
+	left: 0;
+	width: 100%;
+	height: 35px;
+	color: #fff;
+	font-size: 0.35em;
+	line-height: 35px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+.countdown #day:before
+{
+	content: 'Days';
+}
+.countdown #hour:before
+{
+	content: 'Hours';
+}
+.countdown #minute:before
+{
+	content: 'Minutes';
+}
+.countdown #second:before
+{
+	content: 'Seconds';
+}
+.countdown #second,
+.countdown #second:before
+{
+	color: #06d6f1;
+}
+
+@media (max-width: 991px)
+{
+	.container .imgBx
+	{
+		display: none;
+	}
+	.container .countdownBx
+	{
+		width: 100%;
+	}
+}
+@media (max-width: 600px)
+{
+	.container h2
+	{
+		font-size: 1.1em;
+	}
+	.countdown
+	{
+		height: 100px;
+	}
+	.countdown div
+	{
+	    width: 80px;
+	    margin: 0;
+    	margin-top: -20px;
+	    font-size: 2em;
+	}
+}
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+*
+{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
+body
+{
+	min-height: 100vh;
+	background: #399cca;
+}
+.action
+{
+	position: fixed;
+	top: 20px;
+	right: 30px;
+}
+.profile
+{
+	position: relative;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	overflow: hidden;
+	cursor: pointer;
+}
+.profile img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.menu
+{
+	position: absolute;
+	top: 120px;
+	right: -10px;
+	padding: 10px 20px;
+	width: 200px;
+	background: #fff;
+	box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+	border-radius: 15px;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+}
+.menu.active
+{
+	visibility: visible;
+	opacity: 1;
+	top: 80px;
+}
+.menu h3
+{
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+	padding: 20px 0;
+	font-weight: 500;
+	color: #555;
+	line-height: 1.2em;
+}
+.menu h3 span
+{
+	font-size: 14px;
+	color: #cecece;
+	font-weight: 400;
+}
+.menu:before
+{
+	content: '';
+	position: absolute;
+	top: -5px;
+	right: 28px;
+	width: 20px;
+	height: 20px;
+	border-radius: 2px;
+	background: #fff;
+	transform: rotate(45deg);
+}
+.menu ul li
+{
+	list-style: none;
+	padding: 10px 0;
+	border-top: 1px solid rgba(0,0,0,0.05);
+	display: flex;
+	align-items: center;
+}
+.menu ul li img
+{
+	max-width: 20px;
+	margin-right: 10px;
+	opacity: 0.5;
+	transition: 0.5s;
+}
+.menu ul li:hover img
+{
+	opacity: 1;
+}
+.menu ul li a
+{
+	display: inline-block;
+	text-decoration: none;
+	color: #555;
+	font-weight: 500;
+	transition: 0.5s;
+}
+.menu ul li:hover a
+{
+	color: #ff5d94;
+}

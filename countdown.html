@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Countdown 2021</title>
+		<link rel="stylesheet" href="stylecountdown.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="imgBx"></div>
+			<div class="countdownBx">
+				<h2>Countdown to New Year<br><span>20<i>21</i></span></h2>
+				<div class="countdown">
+					<div id="day">NA</div>
+					<div id="hour">NA</div>
+					<div id="minute">NA</div>
+					<div id="second">NA</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			const countDate = new Date('Jan 1, 2021 00:00:00').getTime();
+
+			function newYear(){
+				const now = new Date().getTime();
+				gap = countDate - now;
+
+				const second = 1000;
+				const minute = second * 60;
+				const hour = minute * 60;
+				const day = hour * 24;
+
+				const d = Math.floor(gap / (day));
+				const h = Math.floor((gap % (day)) / (hour));
+				const m = Math.floor((gap % (hour)) / (minute));
+				const s = Math.floor((gap % (minute)) / second);
+
+				document.getElementById('day').innerText = d;
+				document.getElementById('hour').innerText = h;
+				document.getElementById('minute').innerText = m;
+				document.getElementById('second').innerText = s;
+			}
+
+			setInterval(function(){
+				newYear();
+			},1000)
+        </script>
+
+
+
+        <!-- menu-->
+        <div class="action">
+			<div class="profile" onclick="toggleMenu();">
+				<img src="img.jpg">
+			</div>
+			<div class="menu">
+				<h3>Hilmi Hamdi<br><span>Student</span></h3>
+				<ul>
+					<li><img src="profile.png"><a href="#">My Profile</a></li>
+					<li><img src="edit.png"><a href="#">Edit Profile</a></li>
+					<li><img src="inbox.png"><a href="#">Inbox</a></li>
+					<li><img src="settings.png"><a href="#">Setting</a></li>
+					<li><img src="help.png"><a href="#">Help</a></li>
+					<li><img src="logout.png"><a href="#">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function toggleMenu(){
+			var menuToggle = document.querySelector('.menu');
+			menuToggle.classList.toggle('active');
+		}
+		</script>
+	</body>
+</html>
